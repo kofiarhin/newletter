@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "server": "nodemon --env-file=.env server/server.js"
+    "server": "nodemon --env-file=.env server/server.js",
+    "client": "npm run dev --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
@@ -18,6 +20,7 @@
     "mongoose": "^8.16.1"
   },
   "devDependencies": {
+    "concurrently": "^9.2.0",
     "jest": "^30.0.3",
     "supertest": "^7.1.1"
   }

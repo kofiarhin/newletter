@@ -5,12 +5,14 @@ A full-stack newsletter subscription and management platform built with React, S
 ---
 
 ## 🚀 Live Demo
-👉 [View Live](https://your-newsletter-app.vercel.app)  
-_(Replace with your deployed frontend URL)_
+
+- **Frontend:** [https://newletter-kappa.vercel.app/](https://newletter-kappa.vercel.app/)
+- **Backend API:** [https://com.onrender.com](https://com.onrender.com)
 
 ---
 
 ## ✨ Features
+
 - Email subscription form
 - Admin authentication
 - Rich-text/Markdown editor for newsletter creation
@@ -23,20 +25,24 @@ _(Replace with your deployed frontend URL)_
 ---
 
 ## 🛠 Tech Stack
+
 **Frontend:**
+
 - React + Vite
 - SCSS (Sass)
 - Axios, React Router, React Hook Form
 
 **Backend:**
+
 - Node.js + Express
 - MongoDB + Mongoose
 - JWT Authentication
 - SendGrid API
 
 **Deployment:**
-- Frontend: Vercel  
-- Backend: Render or Heroku  
+
+- Frontend: Vercel
+- Backend: Render
 - Database: MongoDB Atlas
 
 ---
@@ -44,7 +50,9 @@ _(Replace with your deployed frontend URL)_
 ## 📦 Installation
 
 ### 🔧 Backend
+
 ```bash
 cd backend
 npm install
 npm run dev
+```

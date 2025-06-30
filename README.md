@@ -7,7 +7,7 @@ A full-stack newsletter subscription and management platform built with React, S
 ## 🚀 Live Demo
 
 - **Frontend:** [https://newletter-kappa.vercel.app/](https://newletter-kappa.vercel.app/)
-- **Backend API:** [https://com.onrender.com](https://com.onrender.com)
+- **Backend:** [https://newletter-g95o.onrender.com/)
 
 ---
 

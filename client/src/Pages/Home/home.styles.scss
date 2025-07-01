@@ -1,0 +1,25 @@
+#home {
+  min-height: 70vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 3rem;
+  }
+  button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: greeen;
+    padding: 0.8rem 0rem;
+    background-color: green;
+    width: 200px;
+    transition: all ease-in-out 300ms;
+    &:hover {
+      background-color: white;
+      border: 4px solid green;
+      color: black;
+    }
+  }
+}

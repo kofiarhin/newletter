@@ -1,20 +1,13 @@
-import { useEffect, useState } from "react";
-import { baseUrl } from "./constants/constants";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home/Home";
 const App = () => {
-  const [data, setData] = useState(null);
-  useEffect(() => {
-    const test = async () => {
-      const url = import.meta.env.DEV ? "/api/auth" : `${baseUrl}/api/auth`;
-      const res = await fetch(url);
-      const result = await res.json();
-      setData(result?.message);
-    };
-
-    test();
-  }, []);
   return (
     <div>
-      <h1 className="heading center"> {data && data} </h1>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
     </div>
   );
 };

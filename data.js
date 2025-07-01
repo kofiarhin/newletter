@@ -1,0 +1,2 @@
+const sampleUrl =
+  "http://localhost:5000/api/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhdmlka3Jha3U2OUBnbWFpbC5jb20iLCJpYXQiOjE3NTEzMzcyMTF9.en16yBzS_YZqf5Qj9oBepNCdPvGZtCkPUT0aRpjt1rI";

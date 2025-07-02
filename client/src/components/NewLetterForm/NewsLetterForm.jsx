@@ -22,12 +22,13 @@ const NewsletterForm = () => {
 
   return (
     <div className="newsletter-form-container">
-      <h1>
-        JOIN MY
-        <br />
-        NEWSLETTER
-      </h1>
-      <p>Subscribe to our newsletter for the latest updates.</p>
+      <h1>JOIN MY NEWSLETTER</h1>
+      <p>
+        Subscribe to our newsletter and be the first to know about new features,
+        exclusive updates, and tips delivered straight to your inbox. No
+        spam—just useful content to keep you informed.
+      </p>
+
       <form onSubmit={handleSubmit}>
         <input
           type="text"

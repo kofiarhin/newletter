@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./newsletterForm.styles.scss";
+import "./newsLetterForm.styles.scss";
 import useSubscribeMutation from "../../hooks/useSubscribeMutation";
 
 const NewsletterForm = () => {

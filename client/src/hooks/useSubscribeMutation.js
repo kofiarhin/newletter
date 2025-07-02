@@ -31,7 +31,8 @@ const useSubscribeMutation = () => {
     mutationKey: ["subscribe"],
     mutationFn: (data) => subscribeUser(data),
     onSuccess: (data) => {
-      alert("subscription successful");
+      console.log("xxxxx", data);
+      alert(`an email has been sent to ${data?.email}`);
     },
   });
 };

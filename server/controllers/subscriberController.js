@@ -3,7 +3,8 @@ const getSubscribers = async (req, res) => {
 };
 
 const createSubscribers = async (req, res) => {
-  return res.json({ message: "create subscribers" });
+  const { email, name } = req.body;
+  return res.json({ name, email });
 };
 
 module.exports = {

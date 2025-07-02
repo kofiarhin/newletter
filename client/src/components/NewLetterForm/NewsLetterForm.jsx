@@ -6,8 +6,8 @@ import Spinner from "../Spinner/Spinner";
 const NewsletterForm = () => {
   const { data, mutate, isPending } = useSubscribeMutation();
   const [formData, setFormData] = useState({
-    name: "david kraku",
-    email: "davidkraku69@gmail.com",
+    name: "",
+    email: "",
   });
 
   const handleChange = (e) => {

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const emailRoutes = require("./routes/emailRoutes");
+const subscriberRoutes = require("./routes/subscriberRoutes");
 
 const app = express();
 
@@ -18,5 +19,6 @@ app.get("/api/auth", (req, res) => {
 });
 
 app.use("/api/email", emailRoutes);
+app.use("/api/subscribers", subscriberRoutes);
 
 module.exports = app;

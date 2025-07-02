@@ -6,6 +6,15 @@ body {
   color: white;
 }
 
+a {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+}
+a:hover {
+  color: blue;
+}
 p {
   font-size: 1.2rem;
 }

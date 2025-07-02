@@ -2,12 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const emailRoutes = require("./routes/emailRoutes");
 const subscriberRoutes = require("./routes/subscriberRoutes");
+const path = require("path");
 
 const app = express();
 
+const staticPath = path.join(__dirname, "public");
 // setup middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static(staticPath));
 
 // routes
 app.get("/", (req, res) => {

@@ -1,8 +1,8 @@
 import { useMutation } from "@tanstack/react-query";
 import { baseUrl } from "../constants/constants";
+import { useNavigate } from "react-router-dom";
 
 const subscribeUser = async (data) => {
-  console.log(import.meta.env.DEV);
   try {
     const prefix = "/api/subscribers";
     const url = import.meta.env.DEV ? prefix : `${baseUrl}${prefix}`;
@@ -27,12 +27,12 @@ const subscribeUser = async (data) => {
 };
 
 const useSubscribeMutation = () => {
+  const navigate = useNavigate();
   return useMutation({
     mutationKey: ["subscribe"],
     mutationFn: (data) => subscribeUser(data),
     onSuccess: (data) => {
-      console.log("xxxxx", data);
-      alert(`an email has been sent to ${data?.email}`);
+      navigate("/success");
     },
   });
 };

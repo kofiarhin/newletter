@@ -1,0 +1,48 @@
+.success-container {
+  background-color: #0f0f0f;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 10px;
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+
+  h1 {
+    color: #00a651;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cfcfcf;
+  }
+
+  button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #00a651;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #009246;
+    }
+  }
+}

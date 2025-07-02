@@ -2,6 +2,7 @@ const User = require("../models/userModel");
 const sendEmail = require("../utility/sendEmail");
 const { BASE_URL } = require("../constants/constants");
 const { generateVerifyEmailHTML } = require("../utility/services");
+const path = require("path");
 // get subscribers
 const getSubscribers = async (req, res) => {
   return res.json({ message: "get subscribers" });
@@ -20,7 +21,7 @@ const createSubscribers = async (req, res) => {
     const user = await User.create({ name, email });
 
     // send email
-    const verifyUrl = `${BASE_URL}/api/verify-subscriber?email=${email}`;
+    const verifyUrl = `${BASE_URL}/api/subscribers/verify?email=${email}`;
     const html = generateVerifyEmailHTML({ name, verifyUrl });
     const emailOptions = {
       to: email,
@@ -37,7 +38,38 @@ const createSubscribers = async (req, res) => {
   }
 };
 
+const verifySubscriber = async (req, res) => {
+  try {
+    const { email } = req.query;
+    if (!email) {
+      throw new Error("please provide a valid email address");
+    }
+
+    // check if user exist
+    const exist = await User.findOne({ email });
+
+    if (!exist) {
+      throw new Error("user not found");
+    }
+
+    // update user
+    const updatedUser = await User.findOneAndUpdate(
+      { email },
+      { $set: { verified: true } },
+      { new: true }
+    );
+
+    // send file to client
+    const filePath = path.join(__dirname, "..", "public", "verified.html");
+    console.log(filePath);
+    return res.sendFile(filePath);
+  } catch (error) {
+    return res.status(500).json({ success: false, error: error.message });
+  }
+};
+
 module.exports = {
   getSubscribers,
   createSubscribers,
+  verifySubscriber,
 };

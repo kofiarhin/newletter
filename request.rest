@@ -1,0 +1,15 @@
+# register user
+###
+POST http://localhost:5000/api/subscribers
+Content-Type: application/json
+
+{
+    "name": "david kraku",
+    "email": "davidkraku69@gmail.com"
+}
+
+
+###
+GET http://localhost:5000/api/subscribers/verify?email=davidkraku69@gmail.com
+
+

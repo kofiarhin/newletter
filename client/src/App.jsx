@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home/Home";
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />

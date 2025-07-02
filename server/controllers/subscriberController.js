@@ -1,6 +1,7 @@
 const User = require("../models/userModel");
 const sendEmail = require("../utility/sendEmail");
-
+const { BASE_URL } = require("../constants/constants");
+const { generateVerifyEmailHTML } = require("../utility/services");
 // get subscribers
 const getSubscribers = async (req, res) => {
   return res.json({ message: "get subscribers" });
@@ -17,13 +18,14 @@ const createSubscribers = async (req, res) => {
     // create user
     await User.deleteMany();
     const user = await User.create({ name, email });
-    console.log({ user });
 
     // send email
+    const verifyUrl = `${BASE_URL}/api/verify-subscriber?email=${email}`;
+    const html = generateVerifyEmailHTML({ name, verifyUrl });
     const emailOptions = {
       to: email,
       subject: "Welcome and confirm email",
-      text: "some text to confirm email",
+      html,
     };
 
     await sendEmail(emailOptions);

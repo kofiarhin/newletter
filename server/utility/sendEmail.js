@@ -14,14 +14,17 @@ const sendEmail = async (options) => {
     from: process.env.EMAIL_USERNAME,
     to: options.to,
     subject: options.subject,
-    text: options.text,
+    text: options.text || "", // Fallback plain text
+    html: options.html || "", // HTML content if provided
   };
 
   try {
     const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent:", info.response);
     return info;
   } catch (err) {
-    throw err;
+    console.error("Error sending email:", err);
+    throw new Error("Failed to send email");
   }
 };
 

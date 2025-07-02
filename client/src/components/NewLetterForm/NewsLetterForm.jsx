@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./newsLetterForm.styles.scss";
 import useSubscribeMutation from "../../hooks/useSubscribeMutation";
+import Spinner from "../Spinner/Spinner";
 
 const NewsletterForm = () => {
-  const { data, mutate } = useSubscribeMutation();
-  console.log(data);
+  const { data, mutate, isPending } = useSubscribeMutation();
   const [formData, setFormData] = useState({
     name: "david kraku",
     email: "davidkraku69@gmail.com",
@@ -19,6 +19,10 @@ const NewsletterForm = () => {
     e.preventDefault();
     mutate(formData);
   };
+
+  if (isPending) {
+    return <Spinner />;
+  }
 
   return (
     <div className="newsletter-form-container">

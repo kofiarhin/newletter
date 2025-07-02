@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import "./newsletterForm.styles.scss";
+import useSubscribeMutation from "../../hooks/useSubscribeMutation";
 
 const NewsletterForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
+  const { data, mutate } = useSubscribeMutation();
+  console.log(data);
+  const [formData, setFormData] = useState({
+    name: "david kraku",
+    email: "davidkraku69@gmail.com",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -11,8 +17,7 @@ const NewsletterForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // TODO: Replace with actual API call
+    mutate(formData);
   };
 
   return (

@@ -50,4 +50,9 @@ describe("app", () => {
       })
     );
   });
+
+  it("should test for file paths", async () => {
+    const { body, statusCode } = await request(app).get("/api/download");
+    expect(statusCode).toBe(200);
+  });
 });

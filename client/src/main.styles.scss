@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+:root {
+  --bg-primary: orange;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +12,8 @@
 body {
   font-family: "Inter", sans-serif;
   min-height: 100vh;
-  background-color: rgb(20, 20, 20);
+  // background-color: rgb(20, 20, 20);
+  background-color: var(--bg-primary);
   color: white;
   width: 100%;
 }
